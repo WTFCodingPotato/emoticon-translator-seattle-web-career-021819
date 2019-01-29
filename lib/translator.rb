@@ -13,7 +13,12 @@ end
 
 def get_japanese_emoticon(file_path, emoticon)
   emoticon_hash = YAML.load_file(file_path)
-
+  result = emoticon_hash["get_emoticon"][emoticon]
+  if result
+    result
+  else
+    "Sorry, that emoticon was not found"
+  end
 end
 
 def get_english_meaning
